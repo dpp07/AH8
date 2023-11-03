@@ -1,19 +1,14 @@
-class Node<T> {
-    T val;
-    Node<T> next;
-    
-    public Node(T val) {
-      this.val = val;
-      this.next = null;
-    }
-  }
-  
-  class Source {
+class Source {
     public static <T> boolean linkedListFind(Node<T> head, T target) {
-      // todo
-      return false;
+        while (head != null){
+            if (head.val == target){
+                return true;
+            }
+            head = head.next;
+        }
+        return false;
     }
-    
+
     public static void main(String[] args) {
         Node<String> a = new Node<>("a");
         Node<String> b = new Node<>("b");
@@ -27,7 +22,7 @@ class Node<T> {
         // a -> b -> c -> d
 
         System.out.println(Source.linkedListFind(a, "c"));
-        
+
     }
 
-  }
+}
